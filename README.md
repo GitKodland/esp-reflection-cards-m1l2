@@ -1,130 +1,41 @@
-# 🎮 Reflection Cards — Build • Reflect • Improve
+# 🎮 Tarjetas de Reflexión — Construye • Reflexiona • Mejora
 
-An interactive web app for pupils to practise self-reflection using the model:
+Una aplicación web interactiva para que los alumnos practiquen la autorreflexión utilizando el modelo:
 
-👉 **Attempted → Stuck → Solution**
+👉 **Intentó → Se quedó atascado → Solución**
 
-The web app seeks to help children (aged 10–12) learn to think like developers. They learn to:
+La aplicación web busca ayudar a los niños (de 10 a 12 años) a aprender a pensar como desarrolladores. Aprenden a:
 
-* set a goal
-* find errors
-* suggest solutions
-
----
-
-## ✨ Key Features
-
-* 🧠 3 reflection cards (Attempted / Stuck / Solution)
-* 📸 Export as an **HD image** (PNG)
-* 🤖 AI feedback (via backend or local fallback)
-* 🎨 Game-like UI (neon style)
-* ⚡ Works straight in the browser (via GitHub Pages)
+* establecer un objetivo
+* encontrar errores
+* sugerir soluciones
 
 ---
 
-## 🧩 How It Works
+## ✨ Características principales
 
-1. The student describes what they wanted to do
-2. They analyse what went wrong
-3. They formulate a solution
-
-👉 This is a **Learning Loop**:
-
-> Goal → Try → Stumble → Improve → Reflect
+* 🧠 3 tarjetas de reflexión (Intentó / Se quedó atascado / Solución)
+* 📸 Exportar como **imagen en HD** (PNG)
+* 🤖 Retroalimentación de IA (mediante backend o alternativa local)
+* 🎨 Interfaz de usuario tipo juego (estilo neón)
+* ⚡ Funciona directamente en el navegador (a través de GitHub Pages)
 
 ---
 
-## ⚙️ Installation & Running
+## 🧩 Cómo funciona
+
+1. El estudiante describe lo que quería hacer
+2. Analiza lo que salió mal
+3. Formula una solución
+
+👉 Este es un **Ciclo de Aprendizaje**:
+
+> Objetivo → Intentar → Tropezar → Mejorar → Reflexionar
+
+---
+
+## ⚙️ Instalación y ejecución
 
 ```bash
 git clone https://github.com/AndreiPabiarzhyn/reflection-cards-m1l2.git
 cd reflection-cards-m1l2
-```
-
-Open `index.html` in your browser
-
----
-
-## 🌍 Deployment (GitHub Pages)
-
-1. Settings → Pages
-2. Branch: `main`
-3. Folder: `/root`
-4. Save
-
----
-
-## 🤖 AI Feedback
-
-There are 2 modes available:
-
-### 1. Fallback (always works)
-
-Local logic inside the `app.js` file
-
-### 2. Full AI (recommended)
-
-Requires a backend (like Vercel)
-
-File:
-
-```
-/api/ai.js
-```
-
-⚠️ Please note: the API key must never be stored on the front end
-
----
-
-## 📁 Project Structure
-
-```
-/reflection-cards-m1l2
-  ├── index.html
-  ├── style.css
-  ├── app.js
-  └── /api
-      └── ai.js
-```
-
----
-
-## 🎯 Project Goal
-
-To create a tool that develops:
-
-* critical thinking
-* independence
-* the ability to analyse mistakes
-* the ability to improve outcomes
-
-👉 The student hasn't just “completed the task”; instead, they:
-**understood what they did and how to do it better**
-
----
-
-## 🔮 Future Development
-
-* 🎮 XP and levels
-* 🏆 Achievement cards
-* 📊 Student's progress history
-* 🤖 Smarter AI feedback
-* 🧠 Personalisation for the pupil’s level
-
----
-
-## 👨‍💻 Author
-
-Andrei Pabiarzhyn
-EdTech / Product / Kodland
-
----
-
-## 💡 Idea
-
-The project is inspired by the educational model:
-
-> **Independent Strategic Creator**
-> (a student who doesn’t just do the work, but understands and improves it)
-
----
