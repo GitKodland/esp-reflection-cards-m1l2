@@ -1,28 +1,28 @@
 // ==========================
-// 📸 DOWNLOAD AS HD IMAGE
+// 📸 DESCARGAR COMO IMAGEN HD
 // ==========================
 function downloadImage() {
 
     const element = document.getElementById("cards");
 
-    // cropping fix
+    // corrección de recorte
     window.scrollTo(0, 0);
 
     html2canvas(element, {
-        scale: window.devicePixelRatio * 2, // 🔥 great quality
+        scale: window.devicePixelRatio * 2, // 🔥 excelente calidad
         useCORS: true,
         backgroundColor: null
     }).then(canvas => {
 
         const link = document.createElement('a');
-        link.download = 'reflection_hd.png';
+        link.download = 'reflexion_hd.png';
         link.href = canvas.toDataURL("image/png", 1.0);
 
         link.click();
     });
 }
 // ==========================
-// 🤖 AI FEEDBACK
+// 🤖 RETROALIMENTACIÓN DE IA
 // ==========================
 async function generateFeedback() {
 
@@ -32,18 +32,18 @@ async function generateFeedback() {
 
     const feedbackEl = document.getElementById("feedback");
 
-    // UX: checking
+    // UX: verificación
     if (!tried || !stuck || !solution) {
-        feedbackEl.innerText = "⚠️ Fill out all the cards";
+        feedbackEl.innerText = "⚠️ Completa todas las tarjetas";
         return;
     }
 
-    feedbackEl.innerText = "🤖 Thinking...";
+    feedbackEl.innerText = "🤖 Pensando...";
 
     try {
 
         // ==========================
-        // CALLING THE BACKEND (IMPORTANT!)
+        // LLAMADA AL BACKEND (¡IMPORTANTE!)
         // ==========================
         const res = await fetch("/ai", {
             method: "POST",
@@ -57,7 +57,7 @@ async function generateFeedback() {
             })
         });
 
-        if (!res.ok) throw new Error("AI error");
+        if (!res.ok) throw new Error("Error de IA");
 
         const data = await res.json();
 
@@ -66,7 +66,7 @@ async function generateFeedback() {
     } catch (e) {
 
         // ==========================
-        // 🧠 FALLBACK (CLEVER LOCAL SOLUTION)
+        // 🧠 ALTERNATIVA LOCAL (SOLUCIÓN INTELIGENTE)
         // ==========================
         feedbackEl.innerText = generateLocalFeedback(tried, stuck, solution);
     }
@@ -74,34 +74,34 @@ async function generateFeedback() {
 
 
 // ==========================
-// 🧠 LOCAL FEEDBACK (if AI is unavailable)
+// 🧠 RETROALIMENTACIÓN LOCAL (si la IA no está disponible)
 // ==========================
 function generateLocalFeedback(tried, stuck, solution) {
 
-    let feedback = "💬 Feedback:\n\n";
+    let feedback = "💬 Retroalimentación:\n\n";
 
-    // 1. Attempted
+    // 1. Intentó
     if (tried.length < 20) {
-        feedback += "👉 Try to describe your idea more clearly.\n";
+        feedback += "👉 Intenta describir tu idea con más claridad.\n";
     } else {
-        feedback += "✅ Great! You've done a great job explaining what you've attempted to do.\n";
+        feedback += "✅ ¡Genial! Has hecho un gran trabajo explicando lo que intentaste hacer.\n";
     }
 
-    // 2. Problem
-    if (stuck.length < 10 || stuck.includes("don't know")) {
-        feedback += "👉 Try to analyse your problem.\n";
+    // 2. Problema
+    if (stuck.length < 10 || stuck.includes("no sé")) {
+        feedback += "👉 Intenta analizar tu problema.\n";
     } else {
-        feedback += "👍 Great! You have a clear understanding of the issue that has to be fixed!\n";
+        feedback += "👍 ¡Genial! Tienes una comprensión clara del problema que hay que solucionar.\n";
     }
 
-    // 3. Solution
+    // 3. Solución
     if (solution.length < 10) {
-        feedback += "👉 What do you want to improve? Try adding clear, easy-to-follow steps.\n";
+        feedback += "👉 ¿Qué quieres mejorar? Intenta agregar pasos claros y fáciles de seguir.\n";
     } else {
-        feedback += "🚀 A good solution! You think like a true developer!\n";
+        feedback += "🚀 ¡Una buena solución! ¡Piensas como un verdadero desarrollador!\n";
     }
 
-    feedback += "\n✨ Keep going! You're on the right track!";
+    feedback += "\n✨ ¡Sigue así! ¡Vas por buen camino!";
 
     return feedback;
 }
