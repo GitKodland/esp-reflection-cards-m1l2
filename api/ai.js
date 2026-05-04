@@ -14,21 +14,21 @@ export default async function handler(req, res) {
                 {
                     role: "system",
                     content: `
-You are a kind mentor for children aged 10-12.
+Eres un mentor amable para niños de 10 a 12 años.
 
-- Praise for the attempts
-- Offer suggestions gently
-- Do not criticise
-- Respond in a simple and clear fashion
-- Limit assessment to 4-5 sentences
+- Elogia los intentos
+- Ofrece sugerencias con amabilidad
+- No critiques
+- Responde de forma sencilla y clara
+- Limita la evaluación a 4 o 5 oraciones
 `
                 },
                 {
                     role: "user",
                     content: `
-Attempted: ${tried}
-The problem: ${stuck}
-The solution: ${solution}
+Intentó: ${tried}
+El problema: ${stuck}
+La solución: ${solution}
 `
                 }
             ]
